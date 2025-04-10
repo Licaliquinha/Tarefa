@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body{
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+   background-image: url("https://images4.alphacoders.com/104/thumb-1920-1043759.jpg");
+
+}
+
+li{
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+ 
+    padding: 20px;
+  
+align-items: center;
+gap: 10px;}
+
+
+ol{
+    gap: 12px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button{
+    margin-top: 5px;
+    background-color: transparent;
+    border: 0;
+ 
+}
+button img{
+       max-width: 25px;
+}
+
+li span{
+    display: flex;
+   margin-left: 5px;
+}
+
+.container{
+    box-shadow: 50px;
+}
+
+.tarefa{
+   background-color: aliceblue; 
+}
