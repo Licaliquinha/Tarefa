@@ -25,16 +25,21 @@
 </head>
 
 <body>
+     
     <div class="container">
-        
-        <h1>Lista de Tarefas</h1>
+         <h1>Lista de Tarefas</h1>
+      
 
         <!-- <form action="http://localhost:8080/tarefa" method="POST"> -->
-        <input type="text" placeholder="Digite a tarefa" id="tarefa" required>
-        <select name="" id="categoria">
-            <option value="trabalho">Trabalho</option>
-            <option value="casa">Casa</option>
-        </select>
+            <div class="tarefass">
+
+                <input type="text" placeholder="Digite a tarefa" id="tarefa" required>
+                <select name="" id="categoria">
+                    <option value="trabalho">Trabalho</option>
+                    <option value="casa">Casa</option>
+                </select>
+            </div>
+        <br>
         <button class="tarefa" onclick="salvarTarefa()">Salvar tarefa
 
         </button>
@@ -48,17 +53,17 @@
             const olHTML = document.getElementById("listaDeTarefas")
 
             async function baixarTarefas() {
-                var tarefas = await fetch("https://tarefa-6r0e.onrender.com/tarefas") //faz a conexão
+                var tarefas = await fetch("http://localhost:8080/tarefas") //faz a conexão
                 var listaDeTarefas = await tarefas.json() //converte a resposta para JSON
 
                 olHTML.innerHTML = ""
                 listaDeTarefas.forEach((tarefa, index) => {
                     const li = document.createElement("li")
                   if(tarefa.categoria == "casa"){
-                    li.innerHTML =  `🏠 <span>${tarefa.tarefa} </span> <button onclick="excluirTarefa(${tarefa.id})"><img src="excluir.png" alt=""></button>`;
+                    li.innerHTML =  `🏠 <span>${tarefa.tarefa} </span> <button class=excluir onclick="excluirTarefa(${tarefa.id})">Excluir</button> `;
                   }
                   else if(tarefa.categoria == "trabalho"){
-                    li.innerHTML =  `💻  <span>${tarefa.tarefa} </span> <div class= > <button onclick="excluirTarefa(${tarefa.id})"><img src="excluir.png" alt=""></button> </div>`;
+                    li.innerHTML =  `💻  <span>${tarefa.tarefa} </span> <button class=excluir onclick="excluirTarefa(${tarefa.id})">Excluir</button> `;
                   }
                     olHTML.appendChild(li);
                 })
@@ -68,7 +73,7 @@
                 let tarefa = document.getElementById("tarefa").value
                 let categoria = document.getElementById("categoria").value
 
-                let req = await fetch("https://tarefa-6r0e.onrender.com/tarefa", {
+                let req = await fetch("http://localhost:8080/tarefa", {
                     method: "POST", // metodo HTTP POST
                     headers: {
                         "Content-Type": "application/json",//Especifica que o conteudo é um OBJ JS
@@ -80,7 +85,7 @@
             }
 
             async function excluirTarefa(index) {
-                let req = await fetch("https://tarefa-6r0e.onrender.com/tarefa/" + index,
+                let req = await fetch("http://localhost:8080/tarefa/" + index,
                     { method: "DELETE" })
                 baixarTarefas()
             }
