@@ -13,7 +13,7 @@ body{
 li{
     font-family: "Roboto", sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: ROW;
  
     padding: 20px;
   
@@ -29,11 +29,13 @@ ol{
     align-items: center;
 }
 
-button{
+.excluir{
     margin-top: 5px;
-    background-color: transparent;
+    background-color: red;
     border: 0;
- 
+ color: white;
+ padding: 5px;
+ font-size: 15px;
 }
 button img{
        max-width: 25px;
@@ -45,9 +47,81 @@ li span{
 }
 
 .container{
-    box-shadow: 50px;
+    margin-top: 150px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+ background-color: rgba(0, 0, 0, 0.432);
+ padding: 25px;
+
 }
 
 .tarefa{
+    border: 0;
+    color: rgb(158, 158, 158);
+    font-size: 20px;
+    padding: 10px;
    background-color: aliceblue; 
+   border-radius: 20px;
+   width: 170px;
+   display: flex;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   margin-left: 70px;
 }
+
+.tarefass{
+    font-size: 30px;
+
+}
+
+h1{
+    font-size: 45px;
+    color: rgb(255, 247, 247);
+    font-family: "Roboto", sans-serif;
+}
+
+input{
+    color: rgb(158, 158, 158);
+font-size: 18px;
+font-family: "Roboto", sans-serif;
+    padding: 10px;
+}
+input::placeholder{
+    color: rgb(158, 158, 158);
+font-size: 18px;
+font-family: "Roboto", sans-serif;
+}
+
+select{
+    color: rgb(158, 158, 158);
+    padding: 7px;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
